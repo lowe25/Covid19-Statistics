@@ -1,0 +1,70 @@
+.img-landing{
+    height: 400px;
+    background-image: url("/assets/img/covid-landing.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .txt-landing{
+        display: grid;
+        justify-content: center;
+        position: relative;
+        top: 40%;
+        color: $font-color;
+    }
+}
+
+.data-container{
+    overflow-x: hidden;
+    .global{
+        position: relative;
+        left: 15%;
+        padding: 10px;
+    }
+    .text{
+        text-align: center;
+        h1{
+            padding: 15px;
+        }
+    }
+    .globalCases-container{
+        padding: 25px;
+        .boxes-container{
+            @include grid-setup;
+            gap: 40px;
+            .box{
+                @include box-design;
+                text-align: center;
+            }
+        }
+    }
+    
+    .country-container{
+        overflow-x: hidden;
+        .country{
+            position: relative;
+            left: 16.5%;
+        }
+        .src-container{
+            position: relative;
+            left: 15.5%;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+        .boxes{
+            @include grid-setup;
+            gap: 40px;
+            .countryCases-box,
+            .countryReco-box,
+            .countryDeaths-box{
+                @include box-design;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.table-container{
+    text-align: center;
+}

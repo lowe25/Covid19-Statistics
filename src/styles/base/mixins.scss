@@ -1,0 +1,11 @@
+@mixin box-design {
+    height: 100px;
+    width: 400px;
+    border: 1px solid $blk-color;
+}
+
+@mixin grid-setup {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,auto);
+}

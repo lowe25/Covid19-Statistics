@@ -1,0 +1,11 @@
+//Base
+@import "./styles/base/reset.scss";
+@import "./styles/base/colors.scss";
+@import "./styles/base/fonts.scss";
+@import "./styles/base/mixins.scss";
+
+//Components
+@import "./styles/components/footer.scss";
+
+//Pages
+@import "./styles/pages/landing.scss";
