@@ -1,10 +1,12 @@
 import "./App.scss";
-import Landing from "./pages/landing";
 import Footer from "./components/footer";
+import Data from "./api/data";
+import GlobalTable from "./api/tableGlobal";
 function App() {
   return (
     <div className="App">
-      <Landing />
+      <Data />
+      <GlobalTable/>
       <Footer />
     </div>
   );

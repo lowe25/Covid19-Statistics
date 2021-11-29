@@ -15,7 +15,8 @@
 
 .data-container{
     overflow-x: hidden;
-    .global{
+    .global
+    {
         position: relative;
         left: 15%;
         padding: 10px;
@@ -34,10 +35,13 @@
             .box{
                 @include box-design;
                 text-align: center;
+                p{
+                    padding: 40px;
+                }
             }
         }
     }
-    
+
     .country-container{
         overflow-x: hidden;
         .country{
@@ -51,6 +55,14 @@
             justify-content: flex-start;
             gap: 20px;
             padding: 20px;
+            .txt-src,
+            .btn-src{
+                height: 32px;
+                width: 200px;
+            }
+            .btn-src{
+                cursor: pointer;
+            }
         }
         .boxes{
             @include grid-setup;
@@ -67,4 +79,19 @@
 
 .table-container{
     text-align: center;
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
 }

@@ -1,4 +1,4 @@
-function Landing() {
+function Landing(props,{data}) {
   return (
     <div>
       <section className="img-landing">
@@ -9,52 +9,47 @@ function Landing() {
       <section className="data-container">
         <div className="text">
           <h1>Covid-19 Tracker: Daily Updates</h1>
-          <h1>Cases As Of Date of Today</h1>
+          <p>Cases As Of: {Date().toLocaleString()}</p>
         </div>
 
         <div className="globalCases-container">
           <h1 className="global">Global Cases:</h1>
           <div className="boxes-container">
             <div className="box">
-            <h1>Total Cases: 1</h1>
+              <p>Total Cases: {props.totalCases}</p>
             </div>
             <div className="box">
-            <h1>Total Recoveries: 1</h1>
+              <p>Total Recoveries: {props.totalRecoveries}</p>
             </div>
             <div className="box">
-            <h1>Total Deaths: 1</h1>
+              <p>Total Deaths: {props.totalDeaths}</p>
             </div>
           </div>
         </div>
+
 
         <div className="country-container">
           <h1 className="country">Country Cases:</h1>
           <div className="src-container">
             <p>Search Country:</p>
-            <input type="textbox" placeholder="Search Country"></input>
-            <input type="submit" value="Search"></input>
+            <input
+              type="textbox"
+              className="txt-src"
+              placeholder="Search Country"
+            ></input>
+            <input type="submit" className="btn-src" value="Search"></input>
           </div>
           <div className="boxes">
             <div className="countryCases-box">
-            <h1>Total Cases: 1</h1>
+              <p>Total Cases: 1</p>
             </div>
             <div className="countryReco-box">
-            <h1>Total Recoveries: 1</h1>
+              <p>Total Recoveries: 1</p>
             </div>
             <div className="countryDeaths-box">
-            <h1>Total Deaths: 1</h1>
+              <p>Total Deaths: 1</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="table-container">
-        <div className="global-cases">
-          <h1>Global Cases Table</h1>
-        </div>
-
-        <div className="region-cases">
-          <h1>Region Cases Table</h1>
         </div>
       </section>
     </div>
