@@ -4,17 +4,15 @@ function Data(props) {
   const [totalCases, setTotalcases] = useState();
   const [totalDeaths, setTotalDeaths] = useState();
   const [totalRecoveries, setTotalReco] = useState();
-
+  const globalStatus = "https://covid-193.p.rapidapi.com/statistics?country=all";
   useEffect(() => {
     fetch(
-      "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/world",
+      globalStatus,
       {
         method: "GET",
         headers: {
-          "x-rapidapi-host":
-            "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-          "x-rapidapi-key":
-            "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
+          "x-rapidapi-host": "covid-193.p.rapidapi.com",
+          "x-rapidapi-key": "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
         },
       }
     )
@@ -25,13 +23,11 @@ function Data(props) {
       })
       .then((response) => {
         console.log(response);
-        response.forEach((e) =>
-          console.log(
-            (setTotalcases(e.TotalCases),
-            setTotalReco(e.TotalRecovered),
-            setTotalDeaths(e.TotalDeaths))
-          )
-        );
+        for(const data of response.response){
+          setTotalcases(data.cases.total)
+          setTotalReco(data.cases.recovered);
+          setTotalDeaths(data.deaths.total)
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -39,10 +35,10 @@ function Data(props) {
   }, []);
   return (
     <div>
-      <Landing 
-          totalCases={totalCases}
-          totalRecoveries={totalRecoveries}
-          totalDeaths={totalDeaths}
+      <Landing
+        totalCases={totalCases}
+        totalRecoveries={totalRecoveries}
+        totalDeaths={totalDeaths}
       />
     </div>
   );

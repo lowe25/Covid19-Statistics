@@ -1,4 +1,5 @@
-function Landing(props,{data}) {
+import Region from "../api/region";
+function Landing(props, { data }) {
   return (
     <div>
       <section className="img-landing">
@@ -11,22 +12,6 @@ function Landing(props,{data}) {
           <h1>Covid-19 Tracker: Daily Updates</h1>
           <p>Cases As Of: {Date().toLocaleString()}</p>
         </div>
-
-        <div className="globalCases-container">
-          <h1 className="global">Global Cases:</h1>
-          <div className="boxes-container">
-            <div className="box">
-              <p>Total Cases: {props.totalCases}</p>
-            </div>
-            <div className="box">
-              <p>Total Recoveries: {props.totalRecoveries}</p>
-            </div>
-            <div className="box">
-              <p>Total Deaths: {props.totalDeaths}</p>
-            </div>
-          </div>
-        </div>
-
 
         <div className="country-container">
           <h1 className="country">Country Cases:</h1>
@@ -50,6 +35,25 @@ function Landing(props,{data}) {
               <p>Total Deaths: 1</p>
             </div>
           </div>
+        </div>
+        
+        <div className="globalCases-container">
+          <h1 className="global">Global Cases:</h1>
+          <div className="boxes-container">
+            <div className="box">
+              <p>Total Cases: {props.totalCases}</p>
+            </div>
+            <div className="box">
+              <p>Total Recoveries: {props.totalRecoveries}</p>
+            </div>
+            <div className="box">
+              <p>Total Deaths: {props.totalDeaths}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="regionalCases-container">
+        <Region />
         </div>
       </section>
     </div>

@@ -1,45 +1,46 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 function GlobalTable(props) {
-const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
+  const apiPostTbl = "https://covid-193.p.rapidapi.com/statistics";
+
   useEffect(() => {
-    fetch(
-      "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host":
-            "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-          "x-rapidapi-key":
-            "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
-        },
-      }
-    )
+    fetch(apiPostTbl, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
+      },
+    })
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
       })
-      .then((response)=> {
-        console.log(response);
-        setData(response);
+      .then((response) => {
+        console.log(response.response);
+        setData(response.response);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
 
-  const renderTable = () =>{
-      return data.map(user => {
-          return(
-              <tr>
-                  <td>{user.Country}</td>
-                  <td>{user.TotalCases}</td>
-                  <td>{user.TotalDeaths}</td>
-                  <td>{user.TotalRecovered}</td>
-              </tr>
-          )
-      })
-  }
+  const renderTable = () => {
+    return data.map((user) => {
+      return (
+          <tr>
+            <td>{user.country}</td>
+            <td>{user.cases.total}</td>
+            <td>{user.cases.new}</td>
+            <td>{user.deaths.total}</td>
+            <td>{user.deaths.new}</td>
+            <td>{user.cases.recovered}</td>
+            <td>{user.cases.new}</td>
+          </tr>
+
+      );
+    });
+  };
 
   return (
     <div>
@@ -47,15 +48,18 @@ const [data, setData] = useState([]);
         <div className="global-cases">
           <h1>Global Cases Table</h1>
           <table>
-          <tr>
+           <tbody>
+            <tr>
               <th>Country</th>
               <th>Cases</th>
+              <th>New Cases</th>
               <th>Deaths</th>
+              <th>New Deaths</th>
               <th>Recoveries</th>
+              <th>New Recoveries</th>
             </tr>
-           <tbody>
-           {renderTable()}
-          </tbody>
+            {renderTable()}
+            </tbody>
           </table>
         </div>
 
