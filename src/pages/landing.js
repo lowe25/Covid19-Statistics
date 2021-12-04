@@ -13,30 +13,8 @@ function Landing(props, { data }) {
           <p>Cases As Of: {Date().toLocaleString()}</p>
         </div>
 
-        <div className="country-container">
-          <h1 className="country">Country Cases:</h1>
-          <div className="src-container">
-            <p>Search Country:</p>
-            <input
-              type="textbox"
-              className="txt-src"
-              placeholder="Search Country"
-            ></input>
-            <input type="submit" className="btn-src" value="Search"></input>
-          </div>
-          <div className="boxes">
-            <div className="countryCases-box">
-              <p>Total Cases: 1</p>
-            </div>
-            <div className="countryReco-box">
-              <p>Total Recoveries: 1</p>
-            </div>
-            <div className="countryDeaths-box">
-              <p>Total Deaths: 1</p>
-            </div>
-          </div>
-        </div>
         
+
         <div className="globalCases-container">
           <h1 className="global">Global Cases:</h1>
           <div className="boxes-container">

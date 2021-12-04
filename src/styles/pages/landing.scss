@@ -19,7 +19,7 @@
     {
         position: relative;
         left: 15%;
-        padding: 10px;
+        padding:12px;
     }
     .text{
         text-align: center;
@@ -42,39 +42,6 @@
         }
     }
 
-    .country-container{
-        overflow-x: hidden;
-        .country{
-            position: relative;
-            left: 16.5%;
-        }
-        .src-container{
-            position: relative;
-            left: 15.5%;
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-            padding: 20px;
-            .txt-src,
-            .btn-src{
-                height: 32px;
-                width: 200px;
-            }
-            .btn-src{
-                cursor: pointer;
-            }
-        }
-        .boxes{
-            @include grid-setup;
-            gap: 40px;
-            .countryCases-box,
-            .countryReco-box,
-            .countryDeaths-box{
-                @include box-design;
-                text-align: center;
-            }
-        }
-    }
 
     .box-regions{
         @include box-design;
@@ -116,4 +83,53 @@
       tr:nth-child(even) {
         background-color: #dddddd;
       }
+}
+
+.country-container{
+    overflow-x: hidden;
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    .country{
+       position: relative;
+       
+    }
+    .src-container{
+     display: grid;
+     justify-content: left;
+     grid-template-columns: repeat(2,auto);
+     gap: 15px;
+     padding-left: 10px;
+        .txt-src,
+        .btn-src{
+            height: 32px;
+            width: 200px;
+        }
+        .btn-src{
+            cursor: pointer;
+        }
+
+        .form-countrySrc{
+         display: grid;
+         grid-template-columns: repeat(2,auto);
+         gap: 20px;
+        }
+    }
+    .boxes{
+        @include grid-setup;
+        gap: 40px;
+        .countryCases-box,
+        .countryReco-box,
+        .countryDeaths-box{
+            @include box-design;
+            text-align: center;
+            p{
+                height: 100px;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 }

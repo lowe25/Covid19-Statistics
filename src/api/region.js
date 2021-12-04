@@ -32,6 +32,7 @@ function Region() {
         <div>
           <div className="box-regions">
             <table>
+            <tbody>
               <tr>
                 <td>Region:</td>
                 <td className="continent">{user.continent}</td>
@@ -48,6 +49,7 @@ function Region() {
                 <td>Total Recovered:</td>
                 <td>{user.totalRecovered}</td>
               </tr>
+              </tbody>
             </table>
           </div>
         </div>
