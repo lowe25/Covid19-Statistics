@@ -63,9 +63,6 @@ function GlobalTable(props) {
           </table>
         </div>
 
-        <div className="region-cases">
-          <h1>Region Cases Table</h1>
-        </div>
       </section>
     </div>
   );

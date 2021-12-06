@@ -1,4 +1,6 @@
 .img-landing {
+  font-family: $raleway-font;
+  color: $blk-color;
   height: 400px;
   background-image: url("/assets/img/covid-landing.jpg");
   background-position: center;
@@ -12,8 +14,9 @@
     color: $font-color;
   }
 }
-
+//Global Section CSS
 .data-container {
+  font-family: $raleway-font;
   overflow-x: hidden;
   .global {
     position: relative;
@@ -27,6 +30,7 @@
     }
   }
   .globalCases-container {
+    font-family: $raleway-font;
     padding: 25px;
     .boxes-container {
       @include grid-setup;
@@ -41,6 +45,7 @@
     }
   }
 
+//Region Section CSS
   .regionCases {
     @include grid-setup;
     gap: 30px;
@@ -63,33 +68,10 @@
     }
   }
 }
-.table-container {
-  text-align: center;
-  .global-tbl {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    table-layout: fixed;
-  }
 
-  .global-tbl tr {
-    background-color: #f8f8f8;
-    border: 1px solid black;
-  }
-
-  .global-tbl th,
-  .global-tbl td {
-    padding: 40px;
-  }
-
-  .global-tbl th {
-    text-transform: uppercase;
-  }
-}
-
+//Country Search CSS
 .country-container {
+  font-family: $raleway-font;
   overflow-x: hidden;
   display: grid;
   justify-content: center;
@@ -137,7 +119,37 @@
   }
 }
 
+.table-container {
+  font-family: $raleway-font;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  .global-tbl {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+width: 1275px;
+    table-layout: fixed;
+  }
 
+  .global-tbl tr {
+    background-color: #f8f8f8;
+    border: 1px solid black;
+  }
+
+  .global-tbl th,
+  .global-tbl td {
+    padding: 40px;
+  }
+
+  .global-tbl th {
+    text-transform: uppercase;
+  }
+}
+
+//Media Queries
+//Mobile Device 1
 @include mobile-device(mobile-md) {
   @include table-mediaQueries;
   .data-container {
@@ -180,7 +192,7 @@
 }
 
 
-//Mobile Device
+//Mobile Device 2
 @include mobile-device-lg(mobile-lg, tablet-sm){
   @include table-mediaQueries;
   .data-container {
@@ -267,6 +279,7 @@
   }
 }
 
+//Large Screens
 @include screen-md(tablet-md,screen-md1){
   .data-container {
     .globalCases-container {
