@@ -27,9 +27,9 @@ function GlobalTable(props) {
   }, []);
 
   const renderTable = () => {
-    return data.map((user) => {
+    return data.map((user,index) => {
       return (
-        <tr>
+        <tr key={index}>
           <td data-label="Country">{user.country}</td>
           <td data-label="Cases">{user.cases.total}</td>
           <td data-label="New Cases">{user.cases.new}</td>

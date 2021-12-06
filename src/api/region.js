@@ -28,9 +28,9 @@ function Region() {
       });
   }, []);
   const renderTable = () => {
-    return region.map((user) => {
+    return region.map((user,index) => {
       return (
-        <div>
+        <div key={index}>
           <div className="box-regions">
             <table>
             <tbody>
