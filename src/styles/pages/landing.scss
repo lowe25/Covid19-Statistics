@@ -1,6 +1,5 @@
 .img-landing {
   font-family: $raleway-font;
-  color: $blk-color;
   height: 400px;
   background-image: url("/assets/img/covid-landing.jpg");
   background-position: center;
@@ -17,6 +16,7 @@
 //Global Section CSS
 .data-container {
   font-family: $raleway-font;
+
   overflow-x: hidden;
   .global {
     position: relative;
@@ -31,6 +31,7 @@
   }
   .globalCases-container {
     font-family: $raleway-font;
+
     padding: 25px;
     .boxes-container {
       @include grid-setup;
@@ -45,8 +46,10 @@
     }
   }
 
-//Region Section CSS
+  //Region Section CSS
   .regionCases {
+    font-family: $raleway-font;
+
     @include grid-setup;
     gap: 30px;
 
@@ -72,6 +75,8 @@
 //Country Search CSS
 .country-container {
   font-family: $raleway-font;
+
+  font-family: $raleway-font;
   overflow-x: hidden;
   display: grid;
   justify-content: center;
@@ -81,6 +86,8 @@
     position: relative;
   }
   .src-container {
+    font-family: $raleway-font;
+
     display: grid;
     justify-content: left;
     grid-template-columns: repeat(2, auto);
@@ -102,6 +109,8 @@
     }
   }
   .boxes {
+    font-family: $raleway-font;
+
     @include grid-setup;
     gap: 40px;
     .countryCases-box,
@@ -120,17 +129,16 @@
 }
 
 .table-container {
-  font-family: $raleway-font;
   text-align: center;
-  display: grid;
-  justify-content: center;
+  font-family: $raleway-font;
+
   .global-tbl {
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
     padding: 0;
-width: 1275px;
     table-layout: fixed;
+    width: 100%;
   }
 
   .global-tbl tr {
@@ -191,9 +199,8 @@ width: 1275px;
   }
 }
 
-
 //Mobile Device 2
-@include mobile-device-lg(mobile-lg, tablet-sm){
+@include mobile-device-lg(mobile-lg, tablet-sm) {
   @include table-mediaQueries;
   .data-container {
     .globalCases-container {
@@ -235,7 +242,7 @@ width: 1275px;
 }
 
 //Tablet Device
-@include tablet-device(tablet-sm, tablet-md){
+@include tablet-device(tablet-sm, tablet-md) {
   @include table-mediaQueries;
 
   .data-container {
@@ -249,9 +256,9 @@ width: 1275px;
       }
     }
     .regionCases {
-     // @include grid-col;
-     display: grid;
-     grid-template-columns: repeat(2,auto);
+      // @include grid-col;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
       .box-regions {
         height: 270px;
         width: 350px;
@@ -280,7 +287,7 @@ width: 1275px;
 }
 
 //Large Screens
-@include screen-md(tablet-md,screen-md1){
+@include screen-md(tablet-md, screen-md1) {
   .data-container {
     .globalCases-container {
       .boxes-container {
@@ -292,9 +299,9 @@ width: 1275px;
       }
     }
     .regionCases {
-     // @include grid-col;
-     display: grid;
-     grid-template-columns: repeat(2,auto);
+      // @include grid-col;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
       .box-regions {
         height: 270px;
         width: 350px;
@@ -304,7 +311,7 @@ width: 1275px;
   .country-container {
     .src-container {
       @include grid-col;
-      grid-template-columns: repeat(2,auto);
+      grid-template-columns: repeat(2, auto);
 
       .form-countrySrc {
         .txt-src {
@@ -314,7 +321,7 @@ width: 1275px;
     }
     .boxes {
       @include grid-col;
-      grid-template-columns: repeat(1,auto);
+      grid-template-columns: repeat(1, auto);
       .countryCases-box,
       .countryReco-box,
       .countryDeaths-box {
@@ -323,7 +330,3 @@ width: 1275px;
     }
   }
 }
-
-
-
-
