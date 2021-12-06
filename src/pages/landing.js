@@ -13,8 +13,6 @@ function Landing(props, { data }) {
           <p>Cases As Of: {Date().toLocaleString()}</p>
         </div>
 
-        
-
         <div className="globalCases-container">
           <h1 className="global">Global Cases:</h1>
           <div className="boxes-container">

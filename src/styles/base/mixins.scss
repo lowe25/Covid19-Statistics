@@ -9,3 +9,49 @@
     justify-content: center;
     grid-template-columns: repeat(3,auto);
 }
+
+@mixin grid-col {
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+}
+
+@mixin table-mediaQueries {
+    .global-tbl {
+        border: 0;
+        font-size: 15px;
+      }
+    
+      .global-tbl thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+    
+      .global-tbl tr {
+        border: 1px solid black;
+        margin-bottom: 45px;
+      }
+    
+      .global-tbl td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+      }
+    
+      .global-tbl td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    
+      .global-tbl td:last-child {
+        border-bottom: 0;
+      }
+}

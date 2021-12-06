@@ -1,135 +1,316 @@
-.img-landing{
-    height: 400px;
-    background-image: url("/assets/img/covid-landing.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .txt-landing{
-        display: grid;
-        justify-content: center;
-        position: relative;
-        top: 40%;
-        color: $font-color;
-    }
-}
-
-.data-container{
-    overflow-x: hidden;
-    .global
-    {
-        position: relative;
-        left: 15%;
-        padding:12px;
-    }
-    .text{
-        text-align: center;
-        h1{
-            padding: 15px;
-        }
-    }
-    .globalCases-container{
-        padding: 25px;
-        .boxes-container{
-            @include grid-setup;
-            gap: 40px;
-            .box{
-                @include box-design;
-                text-align: center;
-                p{
-                    padding: 40px;
-                }
-            }
-        }
-    }
-
-
-    .box-regions{
-        @include box-design;
-        height: 190px;
-        width: 407px;
-        padding: 20px;
-        table{
-            padding: 10px;
-            width: 100%;
-        }
-        .continent{
-            font-weight: bold;
-        }
-        td{
-            padding: 4px;
-        }
-    }
-    
-    .regionCases{
-     @include grid-setup;
-        gap: 30px;
-    }
-    
-}
-.table-container{
-    text-align: center;
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-}
-
-.country-container{
-    overflow-x: hidden;
+.img-landing {
+  height: 400px;
+  background-image: url("/assets/img/covid-landing.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .txt-landing {
     display: grid;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    .country{
-       position: relative;
-       
-    }
-    .src-container{
-     display: grid;
-     justify-content: left;
-     grid-template-columns: repeat(2,auto);
-     gap: 15px;
-     padding-left: 10px;
-        .txt-src,
-        .btn-src{
-            height: 32px;
-            width: 200px;
-        }
-        .btn-src{
-            cursor: pointer;
-        }
-
-        .form-countrySrc{
-         display: grid;
-         grid-template-columns: repeat(2,auto);
-         gap: 20px;
-        }
-    }
-    .boxes{
-        @include grid-setup;
-        gap: 40px;
-        .countryCases-box,
-        .countryReco-box,
-        .countryDeaths-box{
-            @include box-design;
-            text-align: center;
-            p{
-                height: 100px;
-                display: grid;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    }
+    position: relative;
+    top: 40%;
+    color: $font-color;
+  }
 }
+
+.data-container {
+  overflow-x: hidden;
+  .global {
+    position: relative;
+    left: 15%;
+    padding: 12px;
+  }
+  .text {
+    text-align: center;
+    h1 {
+      padding: 15px;
+    }
+  }
+  .globalCases-container {
+    padding: 25px;
+    .boxes-container {
+      @include grid-setup;
+      gap: 40px;
+      .box {
+        @include box-design;
+        text-align: center;
+        p {
+          padding: 40px;
+        }
+      }
+    }
+  }
+
+  .regionCases {
+    @include grid-setup;
+    gap: 30px;
+
+    .box-regions {
+      @include box-design;
+      height: 280px;
+      width: 407px;
+      padding: 20px;
+      table {
+        padding: 10px;
+        width: 100%;
+      }
+      .continent {
+        font-weight: bold;
+      }
+      td {
+        padding: 4px;
+      }
+    }
+  }
+}
+.table-container {
+  text-align: center;
+  .global-tbl {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .global-tbl tr {
+    background-color: #f8f8f8;
+    border: 1px solid black;
+  }
+
+  .global-tbl th,
+  .global-tbl td {
+    padding: 40px;
+  }
+
+  .global-tbl th {
+    text-transform: uppercase;
+  }
+}
+
+.country-container {
+  overflow-x: hidden;
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  .country {
+    position: relative;
+  }
+  .src-container {
+    display: grid;
+    justify-content: left;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    padding-left: 10px;
+    .txt-src,
+    .btn-src {
+      height: 32px;
+      width: 200px;
+    }
+    .btn-src {
+      cursor: pointer;
+    }
+
+    .form-countrySrc {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 20px;
+    }
+  }
+  .boxes {
+    @include grid-setup;
+    gap: 40px;
+    .countryCases-box,
+    .countryReco-box,
+    .countryDeaths-box {
+      @include box-design;
+      text-align: center;
+      p {
+        height: 100px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+
+@include mobile-device(mobile-md) {
+  @include table-mediaQueries;
+  .data-container {
+    .globalCases-container {
+      .boxes-container {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        .box {
+          width: 250px;
+        }
+      }
+    }
+    .regionCases {
+      @include grid-col;
+      .box-regions {
+        height: 380px;
+        width: 250px;
+      }
+    }
+  }
+  .country-container {
+    .src-container {
+      @include grid-col;
+
+      .form-countrySrc {
+        .txt-src {
+          width: 250px;
+        }
+      }
+    }
+    .boxes {
+      @include grid-col;
+      .countryCases-box,
+      .countryReco-box,
+      .countryDeaths-box {
+        width: 250px;
+      }
+    }
+  }
+}
+
+
+//Mobile Device
+@include mobile-device-lg(mobile-lg, tablet-sm){
+  @include table-mediaQueries;
+  .data-container {
+    .globalCases-container {
+      .boxes-container {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        .box {
+          width: 370px;
+        }
+      }
+    }
+    .regionCases {
+      @include grid-col;
+      .box-regions {
+        height: 270px;
+        width: 370px;
+      }
+    }
+  }
+  .country-container {
+    .src-container {
+      @include grid-col;
+
+      .form-countrySrc {
+        .txt-src {
+          width: 372px;
+        }
+      }
+    }
+    .boxes {
+      @include grid-col;
+      .countryCases-box,
+      .countryReco-box,
+      .countryDeaths-box {
+        width: 370px;
+      }
+    }
+  }
+}
+
+//Tablet Device
+@include tablet-device(tablet-sm, tablet-md){
+  @include table-mediaQueries;
+
+  .data-container {
+    .globalCases-container {
+      .boxes-container {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        .box {
+          width: 475px;
+        }
+      }
+    }
+    .regionCases {
+     // @include grid-col;
+     display: grid;
+     grid-template-columns: repeat(2,auto);
+      .box-regions {
+        height: 270px;
+        width: 350px;
+      }
+    }
+  }
+  .country-container {
+    .src-container {
+      @include grid-col;
+
+      .form-countrySrc {
+        .txt-src {
+          width: 372px;
+        }
+      }
+    }
+    .boxes {
+      @include grid-col;
+      .countryCases-box,
+      .countryReco-box,
+      .countryDeaths-box {
+        width: 475px;
+      }
+    }
+  }
+}
+
+@include screen-md(tablet-md,screen-md1){
+  .data-container {
+    .globalCases-container {
+      .boxes-container {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        .box {
+          width: 736px;
+        }
+      }
+    }
+    .regionCases {
+     // @include grid-col;
+     display: grid;
+     grid-template-columns: repeat(2,auto);
+      .box-regions {
+        height: 270px;
+        width: 350px;
+      }
+    }
+  }
+  .country-container {
+    .src-container {
+      @include grid-col;
+      grid-template-columns: repeat(2,auto);
+
+      .form-countrySrc {
+        .txt-src {
+          width: 372px;
+        }
+      }
+    }
+    .boxes {
+      @include grid-col;
+      grid-template-columns: repeat(1,auto);
+      .countryCases-box,
+      .countryReco-box,
+      .countryDeaths-box {
+        width: 736px;
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,59 @@
+/*Media Querys*/
+/*Screen Breakpoints*/
+/*Notes
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+$screen-sizes: (
+  "mobile": 0px,
+  "mobile-sm": 320px,
+  "mobile-md": 480px,
+  "mobile-lg": 481px,
+  "tablet-sm": 768px,
+  "tablet-md": 1024px,
+  "tablet-lg":1025px,
+  "screen-md":1270px,
+  "screen-md1":1289px,
+  "screen-lg":1418px,
+  "screen-xl":1539px
+);
+ 
+@mixin mobile-device($screen) {
+  @media (max-width: map-get($screen-sizes, $screen)) {
+    @content;
+  }
+}
+
+@mixin mobile-device-lg($screen1, $screen2) {
+  @media (min-width: map-get($screen-sizes , $screen1)) and (max-width: map-get($screen-sizes, $screen2)) {
+    @content;
+  }
+}
+
+@mixin tablet-device($screen1, $screen2) {
+  @media (min-width: map-get($screen-sizes , $screen1)) and (max-width: map-get($screen-sizes, $screen2)) {
+    @content;
+  }
+}
+
+//Large Screens
+@mixin screen-md($screen1, $screen2){
+  @media (min-width: map-get($screen-sizes , $screen1)) and (max-width: map-get($screen-sizes, $screen2)) {
+  @content;
+  }
+}
+
+@mixin screen-lg($screen1, $screen2){
+  @media (min-width: map-get($screen-sizes , $screen1)) and (max-width: map-get($screen-sizes, $screen2)) {
+  @content;
+  }
+}
+
+@mixin screen-xl($screen1, $screen2){
+  @media (min-width: map-get($screen-sizes , $screen1)) and (max-width: map-get($screen-sizes, $screen2)){
+    @content;
+  }
+}

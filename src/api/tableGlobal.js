@@ -18,6 +18,7 @@ function GlobalTable(props) {
       })
       .then((response) => {
         console.log(response.response);
+        console.log(response.length);
         setData(response.response);
       })
       .catch((err) => {
@@ -28,16 +29,15 @@ function GlobalTable(props) {
   const renderTable = () => {
     return data.map((user) => {
       return (
-          <tr>
-            <td>{user.country}</td>
-            <td>{user.cases.total}</td>
-            <td>{user.cases.new}</td>
-            <td>{user.deaths.total}</td>
-            <td>{user.deaths.new}</td>
-            <td>{user.cases.recovered}</td>
-            <td>{user.cases.new}</td>
-          </tr>
-
+        <tr>
+          <td data-label="Country">{user.country}</td>
+          <td data-label="Cases">{user.cases.total}</td>
+          <td data-label="New Cases">{user.cases.new}</td>
+          <td data-label="Deaths">{user.deaths.total}</td>
+          <td data-label="New Deaths">{user.deaths.new}</td>
+          <td data-label="Recoveries">{user.cases.recovered}</td>
+          <td data-label="New Recoveries">{user.cases.new}</td>
+        </tr>
       );
     });
   };
@@ -47,19 +47,19 @@ function GlobalTable(props) {
       <section className="table-container">
         <div className="global-cases">
           <h1>Global Cases Table</h1>
-          <table>
-           <tbody>
-            <tr>
-              <th>Country</th>
-              <th>Cases</th>
-              <th>New Cases</th>
-              <th>Deaths</th>
-              <th>New Deaths</th>
-              <th>Recoveries</th>
-              <th>New Recoveries</th>
-            </tr>
-            {renderTable()}
-            </tbody>
+          <table className="global-tbl">
+            <thead>
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Cases</th>
+                <th scope="col">New Cases</th>
+                <th scope="col">Deaths</th>
+                <th scope="col">New Deaths</th>
+                <th scope="col">Recoveries</th>
+                <th scope="col">New Recoveries</th>
+              </tr>
+            </thead>
+            <tbody>{renderTable()}</tbody>
           </table>
         </div>
 

@@ -20,6 +20,7 @@ function Region() {
         }
       })
       .then((response) => {
+        console.log(response.result)
         setRegion(response.result);
       })
       .catch((err) => {
@@ -33,10 +34,26 @@ function Region() {
           <div className="box-regions">
             <table>
             <tbody>
-              <tr>
+            <tr>
                 <td>Region:</td>
                 <td className="continent">{user.continent}</td>
               </tr>
+              
+            <tr>
+                <td>Active Cases:</td>
+                <td>{user.activeCases}</td>
+              </tr>
+
+            <tr>
+                <td>New Cases:</td>
+                <td>{user.newCases}</td>
+              </tr>
+
+              <tr>
+                <td>New Deaths:</td>
+                <td>{user.newDeaths}</td>
+              </tr>
+
               <tr>
                  <td>Total Cases:</td>
                 <td>{user.totalCases}</td>

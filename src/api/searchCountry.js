@@ -57,11 +57,9 @@ function Searchcountry() {
               placeholder="Search Country"
             ></input>
           </div>
-          <div>
-            <input type="submit" className="btn-src" value="Submit" />
-          </div>
         </form>
       </div>
+      
       <div className="boxes">
         <div className="countryCases-box">
           <p>Total Cases: {cases}</p>
