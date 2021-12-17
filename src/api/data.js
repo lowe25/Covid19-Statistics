@@ -5,6 +5,7 @@ function Data(props) {
   const [totalDeaths, setTotalDeaths] = useState();
   const [totalRecoveries, setTotalReco] = useState();
   const globalStatus = "https://covid-193.p.rapidapi.com/statistics?country=all";
+
   useEffect(() => {
     fetch(
       globalStatus,
@@ -24,9 +25,16 @@ function Data(props) {
       .then((response) => {
         console.log(response);
         for(const data of response.response){
-          setTotalcases(data.cases.total)
-          setTotalReco(data.cases.recovered);
-          setTotalDeaths(data.deaths.total)
+          const t = data.cases.total;
+          const r = data.cases.recovered;
+          const d = data.deaths.total
+          const total  = t.toLocaleString();
+          const deaths = d.toLocaleString();
+          const recoveries = r.toLocaleString();
+          total.toLocaleString();
+          setTotalcases(total);
+          setTotalReco(recoveries);
+          setTotalDeaths(deaths)
         }
       })
       .catch((err) => {

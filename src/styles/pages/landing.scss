@@ -16,7 +16,6 @@
 //Global Section CSS
 .data-container {
   font-family: $raleway-font;
-
   overflow-x: hidden;
   .global {
     position: relative;
@@ -31,7 +30,6 @@
   }
   .globalCases-container {
     font-family: $raleway-font;
-
     padding: 25px;
     .boxes-container {
       @include grid-setup;
@@ -47,9 +45,15 @@
   }
 
   //Region Section CSS
+  .regionalCases-container{
+    .region{
+      position: relative;
+      left: 16%;
+      padding: 12px;
+    }
+  }
   .regionCases {
     font-family: $raleway-font;
-
     @include grid-setup;
     gap: 30px;
 

@@ -22,9 +22,15 @@ function Searchcountry() {
       .then((response) => {
         console.log(response);
         for (const data of response.response) {
-          setCases(data.cases.total);
-          setReco(data.cases.recovered);
-          setDeaths(data.deaths.total);
+          const t = data.cases.total;
+          const r = data.cases.recovered;
+          const d = data.deaths.total;
+          const total = t.toLocaleString();
+          const recovered = r.toLocaleString();
+          const deaths = d.toLocaleString();
+          setCases(total);
+          setReco(recovered);
+          setDeaths(deaths);
         }
       })
       .catch((err) => {
@@ -59,7 +65,7 @@ function Searchcountry() {
           </div>
         </form>
       </div>
-      
+
       <div className="boxes">
         <div className="countryCases-box">
           <p>Total Cases: {cases}</p>

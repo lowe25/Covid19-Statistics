@@ -29,6 +29,7 @@ function Landing(props, { data }) {
         </div>
 
         <div className="regionalCases-container">
+        <h1 className="region">Cases By Region:</h1>
         <Region />
         </div>
       </section>
