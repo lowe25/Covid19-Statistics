@@ -1,0 +1,133 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background-color: $navBg-color;
+    color: white;
+    z-index: -1;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 75%;
+    padding: 20px;
+    color: white;
+  }
+  
+  .nav-links1{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+  
+  }
+  .burger-menu {
+    display: none;
+  }
+  
+  
+  @include mobile-device(mobile-md){
+    .logo{
+      display: flex;
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      font-size: 16px;
+    }
+    .nav-links{
+      display: none;
+    }
+    .nav-links-mobile{
+      position: absolute;
+      display: block;
+      left: 0;
+      top:50px;
+      width: 100%;
+      color: white;
+      background-color: $navBg-color;
+      z-index: 1;
+    }
+  
+    .burger-menu{
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      border: none;
+      outline: none;
+      background-color: $navBg-color;
+    }
+    .nav-links1{
+      text-align: center;
+      color: white;
+      padding: 32px;
+      list-style: none;
+      width: 100%;
+      padding: 20px;
+    }
+    .burger-menu{
+      display: block;
+      position: absolute;
+      font-size: 22px;
+      border: none;
+    }
+  }
+
+  @include mobile-device-lg(mobile-lg, tablet-sm){
+    .logo{
+      display: flex;
+
+      font-size: 16px;
+    }
+    .nav-links{
+      display: none;
+    }
+    .nav-links-mobile{
+      position: absolute;
+      display: block;
+      left: 0;
+      top:50px;
+      width: 100%;
+      color: white;
+      background-color: $navBg-color;
+
+      z-index: 1;
+    }
+  
+    .burger-menu{
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      border: none;
+      outline: none;
+      background-color: $navBg-color;
+
+    }
+    .nav-links1{
+      text-align: center;
+      color: white;
+      padding: 32px;
+      list-style: none;
+      width: 100%;
+      padding: 20px;
+    }
+    .burger-menu{
+      display: block;
+      position: absolute;
+      font-size: 22px;
+      border: none;
+    }
+  }
+

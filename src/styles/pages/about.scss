@@ -1,0 +1,42 @@
+.about-container {
+  min-height: 782px;
+  font-family: $raleway-font;
+  h1{
+    position: relative;
+    right: 1%;
+ }
+  .about-landing{
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/assets/img/covid19.png");
+  }
+  .about-covid {
+    display: grid;
+    justify-content: center;
+    h1{
+        
+        padding: 10px;
+    }
+    p {
+      display: block;
+      line-height: 1.8;
+    }
+  }
+
+  .symptom-container {
+    padding: 25px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 60px;
+    h1{
+        position: relative;
+        right: 4%;
+     }
+  }
+  li{
+    margin: 12px 0;
+}
+}
