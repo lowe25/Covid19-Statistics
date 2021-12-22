@@ -1,23 +1,29 @@
 .about-container {
   min-height: 782px;
   font-family: $raleway-font;
-  h1{
+  h1 {
     position: relative;
     right: 1%;
- }
-  .about-landing{
+  }
+  .about-landing {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/assets/img/covid19.png");
+    h1 {
       height: 400px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url("/assets/img/covid19.png");
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      color: $font-color;
+    }
   }
   .about-covid {
     display: grid;
     justify-content: center;
-    h1{
-        
-        padding: 10px;
+    h1 {
+      padding: 10px;
     }
     p {
       display: block;
@@ -31,12 +37,94 @@
     justify-content: center;
     grid-template-columns: repeat(2, auto);
     gap: 60px;
-    h1{
-        position: relative;
-        right: 4%;
-     }
+    h1 {
+      position: relative;
+      right: 4%;
+    }
   }
-  li{
+  li {
     margin: 12px 0;
+  }
 }
+
+@include mobile-device(mobile-md) {
+  .about-container {
+    .prevention {
+      font-size: 22px;
+      text-align: center;
+    }
+    .about-covid {
+      p {
+        width: 300px;
+        padding: 10px;
+      }
+    }
+
+    .symptom-container {
+      font-size: 15px;
+      grid-template-columns: repeat(1, auto);
+      padding: 30px;
+    }
+  }
+}
+
+@include mobile-device-lg(mobile-lg, tablet-sm){
+  .about-container {
+    .prevention {
+      font-size: 22px;
+      text-align: center;
+    }
+    .about-covid {
+      p {
+        width: 400px;
+        padding: 10px;
+      }
+    }
+
+    .symptom-container {
+      font-size: 15px;
+      grid-template-columns: repeat(1, auto);
+      padding: 100px;
+    }
+  }
+}
+
+@include tablet-device(tablet-sm, tablet-md){
+  .about-container {
+    .prevention {
+      font-size: 22px;
+      text-align: center;
+    }
+    .about-covid {
+      p {
+        width: 670px;
+        padding: 10px;
+      }
+    }
+
+    .symptom-container {
+      font-size: 15px;
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+}
+
+@include screen-md(tablet-lg, screen-md){
+  .about-container {
+    .prevention {
+      font-size: 22px;
+      text-align: center;
+    }
+    .about-covid {
+      p {
+        width: 780px;
+        padding: 10px;
+      }
+    }
+
+    .symptom-container {
+      font-size: 15px;
+      grid-template-columns: repeat(1, auto);
+    }
+  }
 }

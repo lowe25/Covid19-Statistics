@@ -1,7 +1,9 @@
 function About() {
   return (
     <div className="about-container">
-    <div className="about-landing"></div>
+    <div className="about-landing">
+      <h1 className="prevention">Prevention is Better than cure, Remember these information for your safety </h1>
+    </div>
       <div className="about-covid">
         <h1>About Covid 19</h1>
         <p>
