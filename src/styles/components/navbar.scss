@@ -4,29 +4,33 @@
     align-items: center;
     height: 55px;
     background-color: $navBg-color;
-    color: white;
+    color: $blk-color;
     z-index: -1;
+    font-family: $raleway-font;
+    border-bottom: 2px solid $blk-color;
   }
   .logo {
     font-size: 20px;
   }
   
-  .nav-links {
+  .nav-menu {
     display: flex;
     justify-content: flex-end;
     list-style: none;
     width: 75%;
     padding: 20px;
-    color: white;
   }
   
-  .nav-links1{
+  .nav-links{
     text-decoration: none;
-    color: white;
+    color: $blk-color;
+    font-weight: bold;
     font-size: 16px;
     margin: 0 10px;
     cursor: pointer;
-  
+  }
+  .nav-links:hover{
+    border-bottom: 2px  solid green;
   }
   .burger-menu {
     display: none;
@@ -41,16 +45,16 @@
       left: 20px;
       font-size: 16px;
     }
-    .nav-links{
+    .nav-menu{
       display: none;
     }
-    .nav-links-mobile{
+    .nav-menu-mobile{
       position: absolute;
       display: block;
       left: 0;
       top:50px;
       width: 100%;
-      color: white;
+      color: $blk-color;
       background-color: $navBg-color;
       z-index: 1;
     }
@@ -61,14 +65,14 @@
       top: 14px;
       right: 25px;
       font-size: 30px;
-      color: white;
+      color: $blk-color;
       border: none;
       outline: none;
-      background-color: $navBg-color;
+      
     }
-    .nav-links1{
+    .nav-links{
       text-align: center;
-      color: white;
+      color: black;
       padding: 32px;
       list-style: none;
       width: 100%;
@@ -88,18 +92,17 @@
 
       font-size: 16px;
     }
-    .nav-links{
+    .nav-menu{
       display: none;
     }
-    .nav-links-mobile{
+    .nav-menu-mobile{
       position: absolute;
       display: block;
       left: 0;
       top:50px;
       width: 100%;
-      color: white;
+      color: $blk-color;
       background-color: $navBg-color;
-
       z-index: 1;
     }
   
@@ -109,13 +112,14 @@
       top: 14px;
       right: 25px;
       font-size: 30px;
-      color: white;
+ 
       border: none;
       outline: none;
+      color: $blk-color;
       background-color: $navBg-color;
 
     }
-    .nav-links1{
+    .nav-links{
       text-align: center;
       color: white;
       padding: 32px;

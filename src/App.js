@@ -5,9 +5,11 @@ import "./App.scss";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
+
 //Pages
 import About from "./pages/about";
 import Data from "./api/data";
+import GlobalTable from "./pages/globalCases";
 function App() {
   return (
     <div className="App">
@@ -16,8 +18,8 @@ function App() {
         <Switch>
           <Route path="/" component={Data} exact />
           <Route path="/about" component={About} />
+          <Route path="/tblGlo" component={GlobalTable} />
         </Switch>
-        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,38 @@
+.globalcases-container{
+    padding:50px;
+    
+}
+
+.table-div{
+    .table-container {
+        text-align: center;
+        font-family: $raleway-font;
+       
+        .global-cases{
+          display:grid;
+          justify-content:center;
+        }
+        .global-tbl {
+          border: 1px solid #ccc;
+          border-collapse: collapse;
+          margin: 0;
+          padding: 0;
+          table-layout: fixed;
+        }
+      
+        .global-tbl tr {
+          background-color: #f8f8f8;
+          border: 1px solid black;
+          position: sticky;
+        }
+      
+        .global-tbl th,
+        .global-tbl td {
+          padding: 40px;
+        }
+      
+        .global-tbl th {
+          text-transform: uppercase;
+        }
+      }
+}

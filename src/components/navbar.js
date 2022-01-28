@@ -7,14 +7,16 @@ function Navbar() {
       <nav className="navbar">
         <h1 className="logo">Covid 19 Statistics</h1>
         <ul
-          className={isMobile ? "nav-links-mobile" : "nav-links"}
-          onClick={() => setIsMobile(false)}
-        >
-          <NavLink to="/" className="nav-links1">
+          className={isMobile ? "nav-menu-mobile" : "nav-menu"}
+          onClick={() => setIsMobile(false)}>
+          <NavLink to="/" className="nav-links">
             <li>Home</li>
           </NavLink>
-          <NavLink to="/about" className="nav-links1">
+          <NavLink to="/about" className="nav-links">
             <li>About</li>
+          </NavLink>
+          <NavLink to="/tblGlo" className="nav-links">
+            <li>Global Cases Table</li>
           </NavLink>
         </ul>
         <button className="burger-menu" onClick={() => setIsMobile(!isMobile)}>

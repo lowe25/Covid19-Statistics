@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Landing from "../pages/landing";
-import GlobalTable from "./tableGlobal";
 import Searchcountry from "./searchCountry";
 function Data(props) {
   const [totalCases, setTotalcases] = useState();
@@ -49,7 +48,6 @@ function Data(props) {
         totalDeaths={totalDeaths}
       />
       <Searchcountry />
-      <GlobalTable />
     </div>
   );
 }

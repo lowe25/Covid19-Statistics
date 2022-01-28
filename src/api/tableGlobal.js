@@ -62,7 +62,6 @@ function GlobalTable(props) {
             <tbody>{renderTable()}</tbody>
           </table>
         </div>
-
       </section>
     </div>
   );
