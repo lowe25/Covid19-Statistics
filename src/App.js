@@ -4,8 +4,6 @@ import "./App.scss";
 //Components
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-
-
 //Pages
 import About from "./pages/about";
 import Data from "./api/data";
@@ -20,6 +18,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/tblGlo" component={GlobalTable} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
