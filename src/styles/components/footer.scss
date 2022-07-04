@@ -1,6 +1,6 @@
 .footer {
   min-height: 100px;
-  background-color: $blk-color;
+  background-color: $footerBg-color;
   color: $font-color;
   text-align: center;
   padding: 30px;
@@ -15,5 +15,11 @@
       height: 50px;
       color:white;
     }
+  }
+
+  p{
+   i {
+    padding: 8px;
+   } 
   }
 }

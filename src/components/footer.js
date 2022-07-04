@@ -4,7 +4,7 @@ function Footer(){
     return(
         <div>
             <footer className="footer">
-               <p>For More Information About Covid 19 Click on the Logo Below</p>
+               <p>For More Information About Covid 19 Visit the Websites Below</p>
                 <div className="healthorgs-div">
                  <div className="img-1">
                  <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener noreferrer" target="_blank" ><img src={whoLogo} alt="World Health Organization Covid 19"></img></a>

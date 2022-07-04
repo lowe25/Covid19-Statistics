@@ -4,13 +4,12 @@
     align-items: center;
     height: 55px;
     background-color: $navBg-color;
-    color: $blk-color;
     z-index: -1;
     font-family: $raleway-font;
-    border-bottom: 2px solid $blk-color;
   }
   .logo {
     font-size: 20px;
+    color: $font-color;
   }
   
   .nav-menu {
@@ -23,14 +22,13 @@
   
   .nav-links{
     text-decoration: none;
-    color: $blk-color;
-    font-weight: bold;
+    color: $font-color;
     font-size: 16px;
     margin: 0 10px;
     cursor: pointer;
   }
   .nav-links:hover{
-    border-bottom: 2px  solid green;
+    color:#BA3737;
   }
   .burger-menu {
     display: none;
